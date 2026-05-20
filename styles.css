@@ -1410,9 +1410,14 @@ select.form-input optgroup, select.form-input option {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 700;
   border: 1px solid rgba(255,255,255,0.05);
+}
+
+.social-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: var(--transition-quick);
 }
 
 .social-icon:hover {

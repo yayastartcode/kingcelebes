@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const senderName = document.getElementById('senderName');
   const shippingDate = document.getElementById('shippingDate');
   const specialNotes = document.getElementById('specialNotes');
+  const adminTarget = document.getElementById('adminTarget');
   const whatsappPreview = document.getElementById('whatsappPreview');
 
   /* ==========================================================================
@@ -189,7 +190,7 @@ _Halo tim operasional King Indo Celebes, mohon bantu cek estimasi tarif resmi un
   }
 
   // Bind input listeners to trigger the update on any change
-  const inputElements = [serviceType, originCity, destCity, cargoDetail, senderName, shippingDate, specialNotes];
+  const inputElements = [serviceType, adminTarget, originCity, destCity, cargoDetail, senderName, shippingDate, specialNotes];
   inputElements.forEach(elem => {
     if (elem) {
       elem.addEventListener('input', updateWhatsAppPreview);
@@ -207,8 +208,11 @@ _Halo tim operasional King Indo Celebes, mohon bantu cek estimasi tarif resmi un
     // URL encode the message
     const encodedMessage = encodeURIComponent(messageText);
     
+    // Get target admin number dynamically
+    const targetNumber = adminTarget?.value || '628881269843';
+    
     // Create WhatsApp Click-To-Chat link
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/${targetNumber}?text=${encodedMessage}`;
     
     // Open in a new tab
     window.open(whatsappUrl, '_blank', 'noopener');
