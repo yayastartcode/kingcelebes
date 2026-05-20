@@ -43,8 +43,8 @@
 
   /* Layout */
   --container-max-width: 1200px;
-  --header-height: 90px;
-  --header-shrink-height: 70px;
+  --header-height: 140px;
+  --header-shrink-height: 96px;
   
   /* Color interpolation space variable */
   --in-oklab: ;
@@ -380,7 +380,7 @@ button {
 }
 
 .header-logo-img {
-  height: 52px;
+  height: 104px; /* 52px * 2 */
   width: auto;
   object-fit: contain;
   transition: var(--transition-smooth);
@@ -389,14 +389,14 @@ button {
 
 /* Adjust size when header shrinks */
 .main-header.scrolled .header-logo-img {
-  height: 42px;
+  height: 72px; /* 36px * 2 */
 }
 
 /* If supported, let scroll animation drive it */
 @supports (animation-timeline: scroll()) {
   @keyframes shrinkLogo {
     to {
-      height: 42px;
+      height: 72px;
     }
   }
   .main-header .header-logo-img {
@@ -1377,7 +1377,7 @@ select.form-input optgroup, select.form-input option {
 }
 
 .footer-logo-img {
-  height: 60px;
+  height: 120px; /* 60px * 2 */
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
